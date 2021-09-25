@@ -6,13 +6,21 @@ Ajude a melhorar o leitor de textos, adicione mais palavras nos dicionários, ba
 Por exemplo:
 
 UNB/i
+
 OMS/i
+
 KDE/i
+
 DNER=deeniéerri
+
 USP=úspi
+
 mosca=môsca
+
 bexiga=bechiga
+
 driver=dráiver
+
 git=guíti
 
 A palavra recebida fica antes do = e a forma de pronunciar depois do =
