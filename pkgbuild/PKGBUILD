@@ -1,0 +1,34 @@
+# Maintainer: Bruno Goncalves <bigbruno@gmail.com>
+
+pkgname=rhvoice-brazilian-portuguese-complementary-dict-biglinux
+pkgver=$(date +%y.%m.%d)
+pkgrel=$(date +%H%M)
+arch=('any')
+license=('GPL')
+url="https://github.com/biglinux/rhvoice-brazilian-portuguese-complementary-dict-biglinux"
+pkgdesc="Better TTS in Brazilian Portuguese"
+source=("git+https://github.com/biglinux/rhvoice-brazilian-portuguese-complementary-dict-biglinux.git")
+md5sums=(SKIP)
+
+package() {
+    # Verify default folder
+    if [ -d "${srcdir}/${pkgname}/${pkgname}" ]; then
+        InternalDir="${srcdir}/${pkgname}/${pkgname}"
+    else
+        InternalDir="${srcdir}/${pkgname}"
+    fi
+
+
+    # Copy files
+    if [ -d "${InternalDir}/usr" ]; then
+        cp -r "${InternalDir}/usr" "${pkgdir}/"
+    fi
+
+    if [ -d "${InternalDir}/etc" ]; then
+        cp -r "${InternalDir}/etc" "${pkgdir}/"
+    fi
+
+    if [ -d "${InternalDir}/opt" ]; then
+        cp -r "${InternalDir}/opt" "${pkgdir}/"
+    fi
+}
